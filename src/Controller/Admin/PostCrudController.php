@@ -27,9 +27,12 @@ class PostCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('title'),
-            TextField::new('description'),
-            TextField::new('content'),
+            TextField::new('title')
+                ->setMaxLength(100),
+            TextField::new('description')
+                ->setMaxLength(100),
+            TextField::new('content')
+                ->setMaxLength(100),
             ChoiceField::new('status')
                 ->setChoices([
                     PostStatus::PENDING => PostStatus::PENDING,

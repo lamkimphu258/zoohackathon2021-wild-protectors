@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PostController!{% endblock %}
+
+{% block body %}
+    {% for approvedPost in approvedPosts %}
+        <h1>
+            <a href="{{ path('app_post_show', {'id':approvedPost.id}) }}">
+                {{ approvedPost.title }}
+            </a>
+        </h1>
+        <p>{{ approvedPost.description }}</p>
+        <hr>
+    {% endfor %}
+{% endblock %}

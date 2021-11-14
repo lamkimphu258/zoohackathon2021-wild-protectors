@@ -40,9 +40,9 @@ final class PostFactory extends ModelFactory
     {
         return [
             // TODO add your default values here (https://symfony.com/bundles/ZenstruckFoundryBundle/current/index.html#model-factories)
-            'title' => self::faker()->text(),
-            'description' => self::faker()->text(),
-            'content' => self::faker()->text(),
+            'title' => self::faker()->realText(maxNbChars: 50),
+            'description' => self::faker()->realTextBetween(minNbChars:100, maxNbChars: 200),
+            'content' => self::faker()->realTextBetween(minNbChars: 1000, maxNbChars: 5000),
 //            'status' => self::faker()->randomElement([PostStatus::PENDING, PostStatus::APPROVED]),
             'reference' => self::faker()->randomElements(['Reference 1', 'Reference 2', 'Reference 3'])
         ];

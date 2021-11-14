@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PostController!{% endblock %}
+
+{% block body %}
+    <h1>{{ approvedPost.title }}</h1>
+    <p>{{ approvedPost.content }}</p>
+    <h2>References</h2>
+    <ul>
+        {% for ref in approvedPost.reference %}
+            <li>
+                <a href="//{{ ref }}">
+                    {{ ref }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    <h2>
+        Source from:
+        <a href="//{{ approvedPost.link.link }}">
+            {{ approvedPost.link.link }}
+        </a>
+    </h2>
+{% endblock %}

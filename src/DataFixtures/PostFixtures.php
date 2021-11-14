@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\PostStatus;
 use App\Factory\PostFactory;
 use App\Repository\CategoryRepository;
 use App\Repository\LinkRepository;
@@ -25,11 +26,14 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
         $links = $this->linkRepository->findAll();
         $categories = $this->categoryRepository->findAll();
 
-        PostFactory::createOne([
-            'user' => $volunteers[0],
-            'link' => $links[0],
-            'category' => $categories[0],
-        ]);
+        foreach ($links as $link) {
+            PostFactory::createOne([
+                'user' => $volunteers[0],
+                'link' => $link,
+                'category' => $categories[0],
+                'status' => PostStatus::APPROVED,
+            ]);
+        }
     }
 
     public function getDependencies()
