@@ -4,7 +4,9 @@ namespace App\Controller\Admin;
 
 use App\Entity\Category;
 use App\Entity\Link;
+use App\Entity\Post;
 use App\Entity\User;
+use App\Entity\UserRole;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,14 +27,14 @@ class DashboardController extends AbstractDashboardController
         return [
             MenuItem::linkToDashboard('Dashboard', 'fa fa-home'),
 
-            MenuItem::section('Users'),
-            MenuItem::linkToCrud('Users', 'fa fa-user', User::class),
-
-            MenuItem::section('Links'),
-            MenuItem::linkToCrud('Links', 'fa fa-link', Link::class),
-
-            MenuItem::section('Categories'),
-            MenuItem::linkToCrud('Categories', 'fa fa-align-justify', Category::class),
+            MenuItem::section('Management'),
+            MenuItem::linkToCrud('Users', 'fa fa-user', User::class)
+                ->setPermission(UserRole::ROLE_ADMIN),
+            MenuItem::linkToCrud('Links', 'fa fa-link', Link::class)
+                ->setPermission(UserRole::ROLE_ADMIN),
+            MenuItem::linkToCrud('Categories', 'fa fa-align-justify', Category::class)
+                ->setPermission(UserRole::ROLE_ADMIN),
+            MenuItem::linkToCrud('Posts', 'fa fa-file', Post::class),
         ];
     }
 }

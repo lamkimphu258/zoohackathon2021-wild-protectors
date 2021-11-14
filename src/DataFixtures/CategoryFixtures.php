@@ -6,12 +6,12 @@ use App\Entity\Category;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
-class FactoryFixtures extends Fixture
+class CategoryFixtures extends Fixture
 {
     protected const CATEGORY_NAMES = [
         'Cực kì nguy cấp (CI)',
-        'Nguy cấp  (IN)',
-        'Sẽ nguy cấp (VN)',
+        'Nguy cấp (IN)',
+        'Sẽ nguy cấp (VN)'
     ];
 
     public function load(ObjectManager $manager): void
@@ -21,6 +21,7 @@ class FactoryFixtures extends Fixture
             $category->setName($categoryName);
             $manager->persist($category);
         }
+
         $manager->flush();
     }
 }
