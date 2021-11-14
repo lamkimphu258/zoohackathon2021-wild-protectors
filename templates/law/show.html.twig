@@ -1,0 +1,7 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="text-center">{{ law.title }}</h1>
+    {{ law.content | raw }}
+    <p>Nguồn: <a href="//{{ law.source }}">{{ law.source }}</a></p>
+{% endblock %}

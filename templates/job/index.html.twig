@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Job{% endblock %}
+
+{% block body %}
+    {% for job in jobs %}
+        <h1>{{ job.title }}</h1>
+        {{ job.content | raw }}
+        <p>Liên hệ: <a href="mailto:{{ job.contact }}">{{ job.contact }}</a></p>
+        <hr>
+    {% endfor %}
+{% endblock %}

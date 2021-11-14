@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\Category;
 use App\Entity\Post;
 use App\Entity\PostStatus;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
@@ -18,6 +19,11 @@ class PostRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Post::class);
+    }
+
+    public function findApprovedPostBy(?Category $category)
+    {
+        return $this->findBy(['status' => PostStatus::APPROVED, 'category' => $category]);
     }
 
     public function findApprovedPost()

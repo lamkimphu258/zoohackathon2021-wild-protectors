@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wild{% endblock %}
+
+{% block body %}
+    {% for event in events %}
+        <h1>{{ event.title }}</h1>
+        {{ event.content | raw }}
+        <p>Liên hệ: <a href="mailto:{{ event.contact }}">{{ event.contact }}</a></p>
+        <hr>
+    {% endfor %}
+{% endblock %}

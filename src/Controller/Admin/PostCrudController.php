@@ -10,6 +10,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class PostCrudController extends AbstractCrudController
@@ -29,10 +30,8 @@ class PostCrudController extends AbstractCrudController
         return [
             TextField::new('title')
                 ->setMaxLength(100),
-            TextField::new('description')
-                ->setMaxLength(100),
-            TextField::new('content')
-                ->setMaxLength(100),
+            TextEditorField::new('description'),
+            TextEditorField::new('content'),
             ChoiceField::new('status')
                 ->setChoices([
                     PostStatus::PENDING => PostStatus::PENDING,

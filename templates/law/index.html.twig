@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% for law in laws %}
+        <h1>
+            <a href="{{ path('app_law_show', {'id':law.id}) }}">
+                {{ law.title | raw }}
+            </a>
+        </h1>
+        <hr>
+    {% endfor %}
+{% endblock %}

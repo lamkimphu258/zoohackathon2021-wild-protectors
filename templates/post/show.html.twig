@@ -1,22 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PostController!{% endblock %}
+{% block title %}Wild{% endblock %}
 
 {% block body %}
-    <h1>{{ approvedPost.title }}</h1>
-    <p>{{ approvedPost.content }}</p>
+    <h1 class="text-center">{{ approvedPost.title }}</h1>
+    {{ approvedPost.content | raw }}
     <h2>References</h2>
     <ul>
         {% for ref in approvedPost.reference %}
             <li>
                 <a href="//{{ ref }}">
-                    {{ ref }}
+                    {{ ref}}
                 </a>
             </li>
         {% endfor %}
     </ul>
     <h2>
-        Source from:
+        Nguồn từ:
         <a href="//{{ approvedPost.link.link }}">
             {{ approvedPost.link.link }}
         </a>
