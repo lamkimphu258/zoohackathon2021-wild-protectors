@@ -7,7 +7,9 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       # You should definitely change the password in production
-      MYSQL_DATABASE: widlife_education
+      MYSQL_DATABASE: wildlife_education
+    ports:
+      - '3306:3306'
     volumes:
       - ./data:/var/lib/postgresql/data:rw
       # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
