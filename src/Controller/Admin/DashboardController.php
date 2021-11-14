@@ -3,6 +3,8 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Category;
+use App\Entity\Event;
+use App\Entity\Job;
 use App\Entity\Link;
 use App\Entity\Post;
 use App\Entity\User;
@@ -35,6 +37,10 @@ class DashboardController extends AbstractDashboardController
             MenuItem::linkToCrud('Categories', 'fa fa-align-justify', Category::class)
                 ->setPermission(UserRole::ROLE_ADMIN),
             MenuItem::linkToCrud('Posts', 'fa fa-file', Post::class),
+            MenuItem::linkToCrud('Events', 'fa fa-calendar', Event::class)
+                ->setPermission(UserRole::ROLE_ADMIN),
+            MenuItem::linkToCrud('Jobs', 'fa fa-suitcase', Job::class)
+                ->setPermission(UserRole::ROLE_ADMIN),
         ];
     }
 }

@@ -27,10 +27,11 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
         $categories = $this->categoryRepository->findAll();
 
         foreach ($links as $link) {
+            $number = rand(0, 2);
             PostFactory::createOne([
                 'user' => $volunteers[0],
                 'link' => $link,
-                'category' => $categories[0],
+                'category' => $categories[$number],
                 'status' => PostStatus::APPROVED,
             ]);
         }
