@@ -27,7 +27,7 @@ class SecurityController extends AbstractController
             'error' => $error,
             'last_username' => $lastUsername,
             'translation_domain' => 'admin',
-            'page_title' => '<h1>Wildlife Education</h1>',
+            'page_title' => '<h1>Wild Protectors</h1>',
             'csrf_token_intention' => 'authenticate',
             'username_label' => 'Email',
             'username_parameter' => 'email',

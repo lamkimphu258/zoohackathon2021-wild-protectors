@@ -26,15 +26,21 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
         $links = $this->linkRepository->findAll();
         $categories = $this->categoryRepository->findAll();
 
-        foreach ($links as $link) {
+        for ($i = 0; $i < count($links); $i++) {
             $number = rand(0, 2);
             PostFactory::createOne([
+                'title' => 'Bài nghiên cứu '.$i,
+                'description' => 'Mô tả bài nghiên cứu '.$i,
+                'content' => 'Nội dung bài nghiên cứu '.$i,
                 'user' => $volunteers[0],
-                'link' => $link,
+                'link' => $links[$i],
                 'category' => $categories[$number],
                 'status' => PostStatus::APPROVED,
             ]);
         }
+//        foreach ($links as $link) {
+//
+//        }
     }
 
     public function getDependencies()

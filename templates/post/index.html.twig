@@ -6,13 +6,23 @@
     <div class="container">
         <div class="row">
             <div class="col-2 border-end">
-                {% for category in categories %}
-                    <p>
-                        <a href="{{ path('app_post_index', {'categoryId': category.id}) }}">
-                            {{ category }}
-                        </a>
-                    </p>
-                {% endfor %}
+{#                {% for category in categories %}#}
+{#                    <p>#}
+{#                        <a href="{{ path('app_post_index', {'categoryId': category.id}) }}">#}
+{#                            {{ category }}#}
+{#                        </a>#}
+{#                    </p>#}
+{#                {% endfor %}#}
+                <p>
+                    <a href="{{ path('app_post_index') }}">
+                        Bài viết ngắn
+                    </a>
+                </p>
+                <p>
+                    <a href="{{ path('app_post_index') }}">
+                        Bài viết dài
+                    </a>
+                </p>
             </div>
             <div class="col ps-5">
                 {% for approvedPost in approvedPosts %}

@@ -10,6 +10,6 @@ class LawFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        LawFactory::createMany(100);
+        LawFactory::createMany(0);
     }
 }

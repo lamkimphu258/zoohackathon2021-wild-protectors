@@ -10,6 +10,12 @@ class EventFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        EventFactory::createMany(10);
+        for($i = 0; $i<10; $i++) {
+            EventFactory::createOne([
+                'title' => 'Sự kiện bảo vệ động vật hoang dã ' . $i,
+                'content' => 'Nội dung sự kiện bảo vệ động vật hoang dã ' . $i,
+                'contact' => 'Bảo vệ động vật hoang dã liên hệ ' . $i,
+            ]);
+        }
     }
 }
