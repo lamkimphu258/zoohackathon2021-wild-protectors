@@ -20,7 +20,7 @@
 ###< phpunit/phpunit ###
 
 .idea
-.data
+data
 
 ###> symfony/webpack-encore-bundle ###
 /node_modules/

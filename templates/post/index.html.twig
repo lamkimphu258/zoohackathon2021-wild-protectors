@@ -21,7 +21,7 @@
                             {{ approvedPost.title }}
                         </a>
                     </h1>
-                    <p>{{ approvedPost.description }}</p>
+                    {{ approvedPost.description | raw }}
                     <hr>
                 {% endfor %}
             </div>

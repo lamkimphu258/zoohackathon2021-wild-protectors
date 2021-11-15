@@ -5,8 +5,8 @@
 {% block body %}
     {% for job in jobs %}
         <h1>{{ job.title }}</h1>
-        <p>{{ job.content }}</p>
-        <p>Contact: <a href="mailto:{{ job.contact }}">{{ job.contact }}</a></p>
+        {{ job.content | raw }}
+        <p>Liên hệ: <a href="mailto:{{ job.contact }}">{{ job.contact }}</a></p>
         <hr>
     {% endfor %}
 {% endblock %}

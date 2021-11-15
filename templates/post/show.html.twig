@@ -4,20 +4,20 @@
 
 {% block body %}
     <h1 class="text-center">{{ approvedPost.title }}</h1>
-    <p>{{ approvedPost.content }}</p>
+    {{ approvedPost.content | raw }}
     <h2>References</h2>
     <ul>
         {% for ref in approvedPost.reference %}
             <li>
                 <a href="//{{ ref }}">
-                    {{ ref }}
+                    {{ ref}}
                 </a>
             </li>
         {% endfor %}
     </ul>
     <h2>
-        Source from:
-        <a href="//{{ approvedPost.link.link }}">
+        Nguồn từ:
+        <a href="{{ approvedPost.link.link }}">
             {{ approvedPost.link.link }}
         </a>
     </h2>

@@ -5,8 +5,8 @@
 {% block body %}
     {% for event in events %}
         <h1>{{ event.title }}</h1>
-        <p>{{ event.content }}</p>
-        <p>Contact: <a href="mailto:{{ event.contact }}">{{ event.contact }}</a></p>
+        {{ event.content | raw }}
+        <p>Liên hệ: <a href="mailto:{{ event.contact }}">{{ event.contact }}</a></p>
         <hr>
     {% endfor %}
 {% endblock %}
